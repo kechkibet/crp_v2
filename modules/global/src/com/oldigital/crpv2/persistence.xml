@@ -7,5 +7,6 @@
         <class>com.oldigital.crpv2.entity.Propertyregister</class>
         <class>com.oldigital.crpv2.entity.Subcounties</class>
         <class>com.oldigital.crpv2.entity.Valuationrolls</class>
+        <class>com.oldigital.crpv2.entity.Cadastre</class>
     </persistence-unit>
 </persistence>

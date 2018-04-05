@@ -17,4 +17,8 @@
             template="com/oldigital/crpv2/web/propertyregister/propertyregister-browse.xml"/>
     <screen id="crpv2$Propertyregister.edit"
             template="com/oldigital/crpv2/web/propertyregister/propertyregister-edit.xml"/>
+    <screen id="crpv2$Cadastre.browse"
+            template="com/oldigital/crpv2/web/cadastre/cadastre-browse.xml"/>
+    <screen id="crpv2$Cadastre.edit"
+            template="com/oldigital/crpv2/web/cadastre/cadastre-edit.xml"/>
 </screen-config>

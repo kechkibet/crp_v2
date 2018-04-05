@@ -6,5 +6,6 @@
         <item screen="crpv2$Subcounties.browse"/>
         <item screen="crpv2$Valuationrolls.browse"/>
         <item screen="crpv2$Propertyregister.browse"/>
+        <item screen="crpv2$Cadastre.browse"/>
     </menu>
 </menu-config>
