@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.oldigital.crpv2.web.invoicelines.InvoicelinesBrowse"
+        focusComponent="invoicelinesesTable"
+        lookupComponent="invoicelinesesTable"
+        messagesPack="com.oldigital.crpv2.web.invoicelines">
+    <dsContext>
+        <groupDatasource id="invoicelinesesDs"
+                         class="com.oldigital.crpv2.entity.Invoicelines"
+                         view="Invoicelines-screen-view">
+            <query>
+                <![CDATA[select e from crpv2$Invoicelines e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="invoicelinesesTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="invoicelinesesTable"
+                datasource="invoicelinesesDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="invoicelinesesTable"
+                    width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="amount"/>
+                <column id="description"/>
+                <column id="invoiceID"/>
+                <column id="streamID"/>
+                <column id="qty"/>
+                <column id="unitPrice"/>
+            </columns>
+            <rows datasource="invoicelinesesDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="invoicelinesesTable.create"/>
+                <button id="editBtn"
+                        action="invoicelinesesTable.edit"/>
+                <button id="removeBtn"
+                        action="invoicelinesesTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

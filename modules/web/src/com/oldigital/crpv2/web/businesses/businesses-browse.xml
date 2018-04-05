@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.oldigital.crpv2.web.businesses.BusinessesBrowse"
+        focusComponent="businessesesTable"
+        lookupComponent="businessesesTable"
+        messagesPack="com.oldigital.crpv2.web.businesses">
+    <dsContext>
+        <groupDatasource id="businessesesDs"
+                         class="com.oldigital.crpv2.entity.Businesses"
+                         view="_local">
+            <query>
+                <![CDATA[select e from crpv2$Businesses e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="businessesesTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="businessesesTable"
+                datasource="businessesesDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="businessesesTable"
+                    width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="name"/>
+                <column id="description"/>
+                <column id="regNo"/>
+                <column id="email"/>
+                <column id="phoneNumber"/>
+                <column id="address"/>
+                <column id="status"/>
+                <column id="town"/>
+                <column id="street"/>
+                <column id="buildingName"/>
+            </columns>
+            <rows datasource="businessesesDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="businessesesTable.create"/>
+                <button id="editBtn"
+                        action="businessesesTable.edit"/>
+                <button id="removeBtn"
+                        action="businessesesTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

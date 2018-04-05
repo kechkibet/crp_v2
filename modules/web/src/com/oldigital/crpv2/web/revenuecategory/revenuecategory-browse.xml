@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.oldigital.crpv2.web.revenuecategory.RevenuecategoryBrowse"
+        focusComponent="revenuecategoriesTable"
+        lookupComponent="revenuecategoriesTable"
+        messagesPack="com.oldigital.crpv2.web.revenuecategory">
+    <dsContext>
+        <groupDatasource id="revenuecategoriesDs"
+                         class="com.oldigital.crpv2.entity.Revenuecategory"
+                         view="Revenuecategory-screen-view">
+            <query>
+                <![CDATA[select e from crpv2$Revenuecategory e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="revenuecategoriesTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="revenuecategoriesTable"
+                datasource="revenuecategoriesDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="revenuecategoriesTable"
+                    width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="name"/>
+                <column id="subCounty"/>
+            </columns>
+            <rows datasource="revenuecategoriesDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="revenuecategoriesTable.create"/>
+                <button id="editBtn"
+                        action="revenuecategoriesTable.edit"/>
+                <button id="removeBtn"
+                        action="revenuecategoriesTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

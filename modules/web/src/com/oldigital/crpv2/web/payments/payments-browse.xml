@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.oldigital.crpv2.web.payments.PaymentsBrowse"
+        focusComponent="paymentsesTable"
+        lookupComponent="paymentsesTable"
+        messagesPack="com.oldigital.crpv2.web.payments">
+    <dsContext>
+        <groupDatasource id="paymentsesDs"
+                         class="com.oldigital.crpv2.entity.Payments"
+                         view="Payments-screen-view">
+            <query>
+                <![CDATA[select e from crpv2$Payments e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="paymentsesTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="paymentsesTable"
+                datasource="paymentsesDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="paymentsesTable"
+                    width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="invoiceID"/>
+                <column id="paymentType"/>
+                <column id="originID"/>
+                <column id="amount"/>
+                <column id="description"/>
+                <column id="createdDate"/>
+            </columns>
+            <rows datasource="paymentsesDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="paymentsesTable.create"/>
+                <button id="editBtn"
+                        action="paymentsesTable.edit"/>
+                <button id="removeBtn"
+                        action="paymentsesTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

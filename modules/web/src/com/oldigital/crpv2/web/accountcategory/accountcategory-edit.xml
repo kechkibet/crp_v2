@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editorCaption"
+        class="com.oldigital.crpv2.web.accountcategory.AccountcategoryEdit"
+        datasource="accountcategoryDs"
+        focusComponent="fieldGroup"
+        messagesPack="com.oldigital.crpv2.web.accountcategory">
+    <dsContext>
+        <datasource id="accountcategoryDs"
+                    class="com.oldigital.crpv2.entity.Accountcategory"
+                    view="_local"/>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="windowActions"
+            spacing="true">
+        <fieldGroup id="fieldGroup"
+                    datasource="accountcategoryDs">
+            <column width="250px">
+                <field property="name"/>
+                <field property="description"/>
+            </column>
+        </fieldGroup>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.oldigital.crpv2.web.portalusers.PortalusersBrowse"
+        focusComponent="portalusersesTable"
+        lookupComponent="portalusersesTable"
+        messagesPack="com.oldigital.crpv2.web.portalusers">
+    <dsContext>
+        <groupDatasource id="portalusersesDs"
+                         class="com.oldigital.crpv2.entity.Portalusers"
+                         view="_local">
+            <query>
+                <![CDATA[select e from crpv2$Portalusers e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="portalusersesTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="portalusersesTable"
+                datasource="portalusersesDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="portalusersesTable"
+                    width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="username"/>
+                <column id="password"/>
+                <column id="fullName"/>
+            </columns>
+            <rows datasource="portalusersesDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="portalusersesTable.create"/>
+                <button id="editBtn"
+                        action="portalusersesTable.edit"/>
+                <button id="removeBtn"
+                        action="portalusersesTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

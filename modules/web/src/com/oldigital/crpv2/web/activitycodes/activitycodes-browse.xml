@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.oldigital.crpv2.web.activitycodes.ActivitycodesBrowse"
+        focusComponent="activitycodesesTable"
+        lookupComponent="activitycodesesTable"
+        messagesPack="com.oldigital.crpv2.web.activitycodes">
+    <dsContext>
+        <groupDatasource id="activitycodesesDs"
+                         class="com.oldigital.crpv2.entity.Activitycodes"
+                         view="_local">
+            <query>
+                <![CDATA[select e from crpv2$Activitycodes e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="activitycodesesTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="activitycodesesTable"
+                datasource="activitycodesesDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="activitycodesesTable"
+                    width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="countyActivityCode"/>
+                <column id="description"/>
+                <column id="unitOfMeasure"/>
+                <column id="permitYearlyAmount"/>
+                <column id="status"/>
+            </columns>
+            <rows datasource="activitycodesesDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="activitycodesesTable.create"/>
+                <button id="editBtn"
+                        action="activitycodesesTable.edit"/>
+                <button id="removeBtn"
+                        action="activitycodesesTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

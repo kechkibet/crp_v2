@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.oldigital.crpv2.web.portaluserroles.PortaluserrolesBrowse"
+        focusComponent="portaluserrolesesTable"
+        lookupComponent="portaluserrolesesTable"
+        messagesPack="com.oldigital.crpv2.web.portaluserroles">
+    <dsContext>
+        <groupDatasource id="portaluserrolesesDs"
+                         class="com.oldigital.crpv2.entity.Portaluserroles"
+                         view="Portaluserroles-screen-view">
+            <query>
+                <![CDATA[select e from crpv2$Portaluserroles e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="portaluserrolesesTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="portaluserrolesesTable"
+                datasource="portaluserrolesesDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="portaluserrolesesTable"
+                    width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="userID"/>
+                <column id="role"/>
+            </columns>
+            <rows datasource="portaluserrolesesDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="portaluserrolesesTable.create"/>
+                <button id="editBtn"
+                        action="portaluserrolesesTable.edit"/>
+                <button id="removeBtn"
+                        action="portaluserrolesesTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

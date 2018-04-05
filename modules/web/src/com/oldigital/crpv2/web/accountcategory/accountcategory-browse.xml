@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.oldigital.crpv2.web.accountcategory.AccountcategoryBrowse"
+        focusComponent="accountcategoriesTable"
+        lookupComponent="accountcategoriesTable"
+        messagesPack="com.oldigital.crpv2.web.accountcategory">
+    <dsContext>
+        <groupDatasource id="accountcategoriesDs"
+                         class="com.oldigital.crpv2.entity.Accountcategory"
+                         view="_local">
+            <query>
+                <![CDATA[select e from crpv2$Accountcategory e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="accountcategoriesTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="accountcategoriesTable"
+                datasource="accountcategoriesDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="accountcategoriesTable"
+                    width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="name"/>
+                <column id="description"/>
+            </columns>
+            <rows datasource="accountcategoriesDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="accountcategoriesTable.create"/>
+                <button id="editBtn"
+                        action="accountcategoriesTable.edit"/>
+                <button id="removeBtn"
+                        action="accountcategoriesTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

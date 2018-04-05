@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editorCaption"
+        class="com.oldigital.crpv2.web.portalusers.PortalusersEdit"
+        datasource="portalusersDs"
+        focusComponent="fieldGroup"
+        messagesPack="com.oldigital.crpv2.web.portalusers">
+    <dsContext>
+        <datasource id="portalusersDs"
+                    class="com.oldigital.crpv2.entity.Portalusers"
+                    view="_local"/>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="windowActions"
+            spacing="true">
+        <fieldGroup id="fieldGroup"
+                    datasource="portalusersDs">
+            <column width="250px">
+                <field property="username"/>
+                <field property="password"/>
+                <field property="fullName"/>
+            </column>
+        </fieldGroup>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>

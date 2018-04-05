@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.oldigital.crpv2.web.departments.DepartmentsBrowse"
+        focusComponent="departmentsesTable"
+        lookupComponent="departmentsesTable"
+        messagesPack="com.oldigital.crpv2.web.departments">
+    <dsContext>
+        <groupDatasource id="departmentsesDs"
+                         class="com.oldigital.crpv2.entity.Departments"
+                         view="Departments-screen-view">
+            <query>
+                <![CDATA[select e from crpv2$Departments e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="departmentsesTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="departmentsesTable"
+                datasource="departmentsesDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="departmentsesTable"
+                    width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="deptName"/>
+                <column id="ministryID"/>
+            </columns>
+            <rows datasource="departmentsesDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="departmentsesTable.create"/>
+                <button id="editBtn"
+                        action="departmentsesTable.edit"/>
+                <button id="removeBtn"
+                        action="departmentsesTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

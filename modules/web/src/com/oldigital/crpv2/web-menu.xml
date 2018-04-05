@@ -7,5 +7,25 @@
         <item screen="crpv2$Valuationrolls.browse"/>
         <item screen="crpv2$Propertyregister.browse"/>
         <item screen="crpv2$Cadastre.browse"/>
+        <item screen="crpv2$Revenuestreams.browse"/>
+        <item screen="crpv2$Chartofaccounts.browse"/>
+        <item screen="crpv2$Departments.browse"/>
+        <item screen="crpv2$Revenuecategory.browse"/>
+        <item screen="crpv2$Accountcategory.browse"/>
+        <item screen="crpv2$Ministries.browse"/>
+        <item screen="crpv2$Businesspermits.browse"/>
+        <item screen="crpv2$Activitycodes.browse"/>
+        <item screen="crpv2$Businesses.browse"/>
+        <item screen="crpv2$Invoices.browse"/>
+        <item screen="crpv2$Revenuecollectiontransactions.browse"/>
+        <item screen="crpv2$Paymentmodes.browse"/>
+        <item screen="crpv2$Reconfiles.browse"/>
+        <item screen="crpv2$Revenuecollectors.browse"/>
+        <item screen="crpv2$Propertycharges.browse"/>
+        <item screen="crpv2$Portalusers.browse"/>
+        <item screen="crpv2$Portaluserroles.browse"/>
+        <item screen="crpv2$Payments.browse"/>
+        <item screen="crpv2$Offlinestreams.browse"/>
+        <item screen="crpv2$Invoicelines.browse"/>
     </menu>
 </menu-config>

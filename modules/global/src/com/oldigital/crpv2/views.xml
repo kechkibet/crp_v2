@@ -26,4 +26,128 @@
         <property name="subCounty"
                   view="_minimal"/>
     </view>
+    <view class="com.oldigital.crpv2.entity.Revenuestreams"
+          extends="_local"
+          name="Revenuestreams-screen-view">
+        <property name="category"
+                  view="_minimal"/>
+        <property name="defaultDebitAC"
+                  view="_minimal"/>
+        <property name="defaultCreditAC"
+                  view="_minimal"/>
+        <property name="department"
+                  view="_minimal"/>
+    </view>
+    <view class="com.oldigital.crpv2.entity.Chartofaccounts"
+          extends="_local"
+          name="Chartofaccounts-screen-view">
+        <property name="category"
+                  view="_minimal"/>
+    </view>
+    <view class="com.oldigital.crpv2.entity.Departments"
+          extends="_local"
+          name="Departments-screen-view">
+        <property name="ministryID"
+                  view="_minimal"/>
+    </view>
+    <view class="com.oldigital.crpv2.entity.Revenuecategory"
+          extends="_local"
+          name="Revenuecategory-screen-view">
+        <property name="subCounty"
+                  view="_minimal"/>
+    </view>
+    <view class="com.oldigital.crpv2.entity.Businesspermits"
+          extends="_local"
+          name="Businesspermits-screen-view">
+        <property name="permitPayer"
+                  view="_minimal"/>
+        <property name="businessID"
+                  view="_minimal"/>
+        <property name="activityCode"
+                  view="_minimal"/>
+        <property name="propertyRegisterID"
+                  view="_minimal"/>
+        <property name="rcptNumber"
+                  view="_minimal"/>
+        <property name="invoiceNumber"
+                  view="_minimal"/>
+    </view>
+    <view class="com.oldigital.crpv2.entity.Invoices"
+          extends="_local"
+          name="Invoices-screen-view">
+        <property name="partner"
+                  view="_minimal"/>
+    </view>
+    <view class="com.oldigital.crpv2.entity.Revenuecollectiontransactions"
+          extends="_local"
+          name="Revenuecollectiontransactions-screen-view">
+        <property name="revenueStream"
+                  view="_minimal"/>
+        <property name="revenueCollector"
+                  view="_minimal"/>
+        <property name="revenueSection"
+                  view="_minimal"/>
+        <property name="paymentModeID"
+                  view="_minimal"/>
+        <property name="reconFileID"
+                  view="_minimal"/>
+    </view>
+    <view class="com.oldigital.crpv2.entity.Paymentmodes"
+          extends="_local"
+          name="Paymentmodes-screen-view">
+        <property name="debitAccount"
+                  view="_minimal"/>
+    </view>
+    <view class="com.oldigital.crpv2.entity.Reconfiles"
+          extends="_local"
+          name="Reconfiles-screen-view">
+        <property name="collector"
+                  view="_minimal"/>
+        <property name="invoiceID"
+                  view="_minimal"/>
+    </view>
+    <view class="com.oldigital.crpv2.entity.Revenuecollectors"
+          extends="_local"
+          name="Revenuecollectors-screen-view">
+        <property name="reconPerson"
+                  view="_minimal"/>
+    </view>
+    <view class="com.oldigital.crpv2.entity.Propertycharges"
+          extends="_local"
+          name="Propertycharges-screen-view">
+        <property name="propertyID"
+                  view="_minimal"/>
+        <property name="invoiceID"
+                  view="_minimal"/>
+    </view>
+    <view class="com.oldigital.crpv2.entity.Portaluserroles"
+          extends="_local"
+          name="Portaluserroles-screen-view">
+        <property name="userID"
+                  view="_minimal"/>
+    </view>
+    <view class="com.oldigital.crpv2.entity.Payments"
+          extends="_local"
+          name="Payments-screen-view">
+        <property name="invoiceID"
+                  view="_minimal"/>
+    </view>
+    <view class="com.oldigital.crpv2.entity.Offlinestreams"
+          extends="_local"
+          name="Offlinestreams-screen-view">
+        <property name="collector"
+                  view="_minimal"/>
+        <property name="section"
+                  view="_minimal"/>
+        <property name="stream"
+                  view="_minimal"/>
+    </view>
+    <view class="com.oldigital.crpv2.entity.Invoicelines"
+          extends="_local"
+          name="Invoicelines-screen-view">
+        <property name="invoiceID"
+                  view="_minimal"/>
+        <property name="streamID"
+                  view="_minimal"/>
+    </view>
 </views>

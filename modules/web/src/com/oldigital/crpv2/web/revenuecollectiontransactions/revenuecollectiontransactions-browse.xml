@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.oldigital.crpv2.web.revenuecollectiontransactions.RevenuecollectiontransactionsBrowse"
+        focusComponent="revenuecollectiontransactionsesTable"
+        lookupComponent="revenuecollectiontransactionsesTable"
+        messagesPack="com.oldigital.crpv2.web.revenuecollectiontransactions">
+    <dsContext>
+        <groupDatasource id="revenuecollectiontransactionsesDs"
+                         class="com.oldigital.crpv2.entity.Revenuecollectiontransactions"
+                         view="Revenuecollectiontransactions-screen-view">
+            <query>
+                <![CDATA[select e from crpv2$Revenuecollectiontransactions e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="revenuecollectiontransactionsesTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="revenuecollectiontransactionsesTable"
+                datasource="revenuecollectiontransactionsesDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="revenuecollectiontransactionsesTable"
+                    width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="revenueStream"/>
+                <column id="revenueCollector"/>
+                <column id="datetime"/>
+                <column id="description"/>
+                <column id="paymentMode"/>
+                <column id="paymentID"/>
+                <column id="revenueSection"/>
+                <column id="amount"/>
+                <column id="offlineID"/>
+                <column id="citizenID"/>
+                <column id="paymentModeID"/>
+                <column id="reconStatus"/>
+                <column id="reconFileID"/>
+            </columns>
+            <rows datasource="revenuecollectiontransactionsesDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="revenuecollectiontransactionsesTable.create"/>
+                <button id="editBtn"
+                        action="revenuecollectiontransactionsesTable.edit"/>
+                <button id="removeBtn"
+                        action="revenuecollectiontransactionsesTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

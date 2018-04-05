@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.oldigital.crpv2.web.reconfiles.ReconfilesBrowse"
+        focusComponent="reconfilesesTable"
+        lookupComponent="reconfilesesTable"
+        messagesPack="com.oldigital.crpv2.web.reconfiles">
+    <dsContext>
+        <groupDatasource id="reconfilesesDs"
+                         class="com.oldigital.crpv2.entity.Reconfiles"
+                         view="Reconfiles-screen-view">
+            <query>
+                <![CDATA[select e from crpv2$Reconfiles e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="reconfilesesTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="reconfilesesTable"
+                datasource="reconfilesesDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="reconfilesesTable"
+                    width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="totalToReconcile"/>
+                <column id="totalAmount"/>
+                <column id="collector"/>
+                <column id="invoiceID"/>
+                <column id="startDate"/>
+                <column id="endDate"/>
+            </columns>
+            <rows datasource="reconfilesesDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="reconfilesesTable.create"/>
+                <button id="editBtn"
+                        action="reconfilesesTable.edit"/>
+                <button id="removeBtn"
+                        action="reconfilesesTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.oldigital.crpv2.web.propertycharges.PropertychargesBrowse"
+        focusComponent="propertychargesesTable"
+        lookupComponent="propertychargesesTable"
+        messagesPack="com.oldigital.crpv2.web.propertycharges">
+    <dsContext>
+        <groupDatasource id="propertychargesesDs"
+                         class="com.oldigital.crpv2.entity.Propertycharges"
+                         view="Propertycharges-screen-view">
+            <query>
+                <![CDATA[select e from crpv2$Propertycharges e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="propertychargesesTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="propertychargesesTable"
+                datasource="propertychargesesDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="propertychargesesTable"
+                    width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="propertyID"/>
+                <column id="amountCharged"/>
+                <column id="chargeType"/>
+                <column id="dateCharged"/>
+                <column id="cronJobID"/>
+                <column id="invoiceID"/>
+            </columns>
+            <rows datasource="propertychargesesDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="propertychargesesTable.create"/>
+                <button id="editBtn"
+                        action="propertychargesesTable.edit"/>
+                <button id="removeBtn"
+                        action="propertychargesesTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

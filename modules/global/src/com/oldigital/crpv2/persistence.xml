@@ -8,5 +8,27 @@
         <class>com.oldigital.crpv2.entity.Subcounties</class>
         <class>com.oldigital.crpv2.entity.Valuationrolls</class>
         <class>com.oldigital.crpv2.entity.Cadastre</class>
+        <class>com.oldigital.crpv2.entity.Revenuestreams</class>
+        <class>com.oldigital.crpv2.entity.Chartofaccounts</class>
+        <class>com.oldigital.crpv2.entity.Departments</class>
+        <class>com.oldigital.crpv2.entity.Revenuecategory</class>
+        <class>com.oldigital.crpv2.entity.Accountcategory</class>
+        <class>com.oldigital.crpv2.entity.Ministries</class>
+        <class>com.oldigital.crpv2.entity.Businesspermits</class>
+        <class>com.oldigital.crpv2.entity.Activitycodes</class>
+        <class>com.oldigital.crpv2.entity.Businesses</class>
+        <class>com.oldigital.crpv2.entity.Invoices</class>
+        <class>com.oldigital.crpv2.entity.Revenuecollectiontransactions</class>
+        <class>com.oldigital.crpv2.entity.Paymentmodes</class>
+        <class>com.oldigital.crpv2.entity.Reconfiles</class>
+        <class>com.oldigital.crpv2.entity.Revenuecollectors</class>
+        <class>com.oldigital.crpv2.entity.Propertycharges</class>
+        <class>com.oldigital.crpv2.entity.Portalusers</class>
+        <class>com.oldigital.crpv2.entity.Portaluserroles</class>
+        <class>com.oldigital.crpv2.entity.Payments</class>
+        <class>com.oldigital.crpv2.entity.Offlinestreams</class>
+        <class>com.oldigital.crpv2.entity.Invoicelines</class>
+        <class>com.oldigital.crpv2.entity.Sectionstreams</class>
+        <class>com.oldigital.crpv2.entity.Sectioncollectors</class>
     </persistence-unit>
 </persistence>

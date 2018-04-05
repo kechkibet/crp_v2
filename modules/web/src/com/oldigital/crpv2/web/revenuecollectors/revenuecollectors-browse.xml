@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.oldigital.crpv2.web.revenuecollectors.RevenuecollectorsBrowse"
+        focusComponent="revenuecollectorsesTable"
+        lookupComponent="revenuecollectorsesTable"
+        messagesPack="com.oldigital.crpv2.web.revenuecollectors">
+    <dsContext>
+        <groupDatasource id="revenuecollectorsesDs"
+                         class="com.oldigital.crpv2.entity.Revenuecollectors"
+                         view="Revenuecollectors-screen-view">
+            <query>
+                <![CDATA[select e from crpv2$Revenuecollectors e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="revenuecollectorsesTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="revenuecollectorsesTable"
+                datasource="revenuecollectorsesDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="revenuecollectorsesTable"
+                    width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="name"/>
+                <column id="idNumber"/>
+                <column id="deviceSN"/>
+                <column id="devicePIN"/>
+                <column id="offlineCreditLimit"/>
+                <column id="offlineRcptNumber"/>
+                <column id="isBackOffice"/>
+                <column id="reconPerson"/>
+            </columns>
+            <rows datasource="revenuecollectorsesDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="revenuecollectorsesTable.create"/>
+                <button id="editBtn"
+                        action="revenuecollectorsesTable.edit"/>
+                <button id="removeBtn"
+                        action="revenuecollectorsesTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

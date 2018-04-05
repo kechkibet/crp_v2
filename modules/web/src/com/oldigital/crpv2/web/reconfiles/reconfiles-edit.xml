@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editorCaption"
+        class="com.oldigital.crpv2.web.reconfiles.ReconfilesEdit"
+        datasource="reconfilesDs"
+        focusComponent="fieldGroup"
+        messagesPack="com.oldigital.crpv2.web.reconfiles">
+    <dsContext>
+        <datasource id="reconfilesDs"
+                    class="com.oldigital.crpv2.entity.Reconfiles"
+                    view="Reconfiles-screen-view"/>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="windowActions"
+            spacing="true">
+        <fieldGroup id="fieldGroup"
+                    datasource="reconfilesDs">
+            <column width="250px">
+                <field property="totalToReconcile"/>
+                <field property="totalAmount"/>
+                <field property="collector"/>
+                <field property="invoiceID"/>
+                <field property="startDate"/>
+                <field property="endDate"/>
+            </column>
+        </fieldGroup>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.oldigital.crpv2.web.invoices.InvoicesBrowse"
+        focusComponent="invoicesesTable"
+        lookupComponent="invoicesesTable"
+        messagesPack="com.oldigital.crpv2.web.invoices">
+    <dsContext>
+        <groupDatasource id="invoicesesDs"
+                         class="com.oldigital.crpv2.entity.Invoices"
+                         view="Invoices-screen-view">
+            <query>
+                <![CDATA[select e from crpv2$Invoices e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="invoicesesTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="invoicesesTable"
+                datasource="invoicesesDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="invoicesesTable"
+                    width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="partner"/>
+                <column id="date"/>
+                <column id="dueDate"/>
+                <column id="status"/>
+                <column id="dueAmount"/>
+                <column id="invoiceType"/>
+                <column id="metaData"/>
+            </columns>
+            <rows datasource="invoicesesDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="invoicesesTable.create"/>
+                <button id="editBtn"
+                        action="invoicesesTable.edit"/>
+                <button id="removeBtn"
+                        action="invoicesesTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

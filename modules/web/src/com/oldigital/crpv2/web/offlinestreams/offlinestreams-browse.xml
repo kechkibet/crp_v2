@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.oldigital.crpv2.web.offlinestreams.OfflinestreamsBrowse"
+        focusComponent="offlinestreamsesTable"
+        lookupComponent="offlinestreamsesTable"
+        messagesPack="com.oldigital.crpv2.web.offlinestreams">
+    <dsContext>
+        <groupDatasource id="offlinestreamsesDs"
+                         class="com.oldigital.crpv2.entity.Offlinestreams"
+                         view="Offlinestreams-screen-view">
+            <query>
+                <![CDATA[select e from crpv2$Offlinestreams e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="offlinestreamsesTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="offlinestreamsesTable"
+                datasource="offlinestreamsesDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="offlinestreamsesTable"
+                    width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="collector"/>
+                <column id="section"/>
+                <column id="stream"/>
+            </columns>
+            <rows datasource="offlinestreamsesDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="offlinestreamsesTable.create"/>
+                <button id="editBtn"
+                        action="offlinestreamsesTable.edit"/>
+                <button id="removeBtn"
+                        action="offlinestreamsesTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

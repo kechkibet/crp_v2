@@ -43,6 +43,192 @@ alter table valuationrolls drop column `valuationMethod__UNUSED` cascade ;
 alter table valuationrolls drop column `ratingMethod__UNUSED` cascade ;
 alter table valuationrolls drop column `rentBasedOn__UNUSED` cascade ;]]>
                 </item>
+                <item name="180405-2-updateChartofaccounts03.sql">
+                    <![CDATA[create index IDX_CHARTOFACCOUNTS_CATEGORY on chartofaccounts (CATEGORY);]]>
+                </item>
+                <item name="180405-2-updateRevenuestreams08.sql">
+                    <![CDATA[create index IDX_REVENUESTREAMS_DEPARTMENT on revenuestreams (DEPARTMENT);]]>
+                </item>
+                <item name="180405-2-updateRevenuestreams07.sql">
+                    <![CDATA[create index IDX_REVENUESTREAMS_DEFAULTCREDITAC on revenuestreams (DEFAULTCREDITAC);]]>
+                </item>
+                <item name="180405-2-updateRevenuestreams06.sql">
+                    <![CDATA[create index IDX_REVENUESTREAMS_DEFAULTDEBITAC on revenuestreams (DEFAULTDEBITAC);]]>
+                </item>
+                <item name="180405-2-updateRevenuestreams05.sql">
+                    <![CDATA[create index IDX_REVENUESTREAMS_CATEGORY on revenuestreams (CATEGORY);]]>
+                </item>
+                <item name="180405-2-updateRevenuecollectors01.sql">
+                    <![CDATA[create index IDX_REVENUECOLLECTORS_RECONPERSON on revenuecollectors (RECONPERSON);]]>
+                </item>
+                <item name="180405-2-updateRevenuecollectors.sql">
+                    <![CDATA[alter table revenuecollectors add column CREATE_TS datetime(3) ;
+alter table revenuecollectors add column CREATED_BY varchar(50) ;
+alter table revenuecollectors add column DELETE_TS datetime(3) ;
+alter table revenuecollectors add column DELETED_BY varchar(50) ;
+alter table revenuecollectors add column UPDATE_TS datetime(3) ;
+alter table revenuecollectors add column UPDATED_BY varchar(50) ;
+alter table revenuecollectors add column VERSION integer ;]]>
+                </item>
+                <item name="180405-2-updateRevenuecollectiontransactions05.sql">
+                    <![CDATA[create index IDX_REVENUECOLLECTIONTRANSACTIONS_RECONFILEID on revenuecollectiontransactions (RECONFILEID);]]>
+                </item>
+                <item name="180405-2-updateRevenuecollectiontransactions04.sql">
+                    <![CDATA[create index IDX_REVENUECOLLECTIONTRANSACTIONS_PAYMENTMODEID on revenuecollectiontransactions (PAYMENTMODEID);]]>
+                </item>
+                <item name="180405-2-updateRevenuecollectiontransactions03.sql">
+                    <![CDATA[create index IDX_REVENUECOLLECTIONTRANSACTIONS_REVENUESECTION on revenuecollectiontransactions (REVENUESECTION);]]>
+                </item>
+                <item name="180405-2-updateRevenuecollectiontransactions02.sql">
+                    <![CDATA[create index IDX_REVENUECOLLECTIONTRANSACTIONS_REVENUECOLLECTOR on revenuecollectiontransactions (REVENUECOLLECTOR);]]>
+                </item>
+                <item name="180405-2-updateRevenuecollectiontransactions01.sql">
+                    <![CDATA[create index IDX_REVENUECOLLECTIONTRANSACTIONS_REVENUESTREAM on revenuecollectiontransactions (REVENUESTREAM);]]>
+                </item>
+                <item name="180405-2-updateRevenuecollectiontransactions.sql">
+                    <![CDATA[alter table revenuecollectiontransactions add column CREATE_TS datetime(3) ;
+alter table revenuecollectiontransactions add column CREATED_BY varchar(50) ;
+alter table revenuecollectiontransactions add column DELETE_TS datetime(3) ;
+alter table revenuecollectiontransactions add column DELETED_BY varchar(50) ;
+alter table revenuecollectiontransactions add column UPDATE_TS datetime(3) ;
+alter table revenuecollectiontransactions add column UPDATED_BY varchar(50) ;
+alter table revenuecollectiontransactions add column VERSION integer ;]]>
+                </item>
+                <item name="180405-2-updateRevenuecategory02.sql">
+                    <![CDATA[create index IDX_REVENUECATEGORY_SUBCOUNTY on revenuecategory (SUBCOUNTY);]]>
+                </item>
+                <item name="180405-2-updateReconfiles02.sql">
+                    <![CDATA[create index IDX_RECONFILES_INVOICEID on reconfiles (INVOICEID);]]>
+                </item>
+                <item name="180405-2-updateReconfiles01.sql">
+                    <![CDATA[create index IDX_RECONFILES_COLLECTOR on reconfiles (COLLECTOR);]]>
+                </item>
+                <item name="180405-2-updateReconfiles.sql">
+                    <![CDATA[alter table reconfiles add column CREATE_TS datetime(3) ;
+alter table reconfiles add column CREATED_BY varchar(50) ;
+alter table reconfiles add column DELETE_TS datetime(3) ;
+alter table reconfiles add column DELETED_BY varchar(50) ;
+alter table reconfiles add column UPDATE_TS datetime(3) ;
+alter table reconfiles add column UPDATED_BY varchar(50) ;
+alter table reconfiles add column VERSION integer ;]]>
+                </item>
+                <item name="180405-2-updatePropertycharges02.sql">
+                    <![CDATA[create index IDX_PROPERTYCHARGES_INVOICEID on propertycharges (INVOICEID);]]>
+                </item>
+                <item name="180405-2-updatePropertycharges01.sql">
+                    <![CDATA[create index IDX_PROPERTYCHARGES_PROPERTYID on propertycharges (PROPERTYID);]]>
+                </item>
+                <item name="180405-2-updatePropertycharges.sql">
+                    <![CDATA[alter table propertycharges add column CREATE_TS datetime(3) ;
+alter table propertycharges add column CREATED_BY varchar(50) ;
+alter table propertycharges add column DELETE_TS datetime(3) ;
+alter table propertycharges add column DELETED_BY varchar(50) ;
+alter table propertycharges add column UPDATE_TS datetime(3) ;
+alter table propertycharges add column UPDATED_BY varchar(50) ;
+alter table propertycharges add column VERSION integer ;]]>
+                </item>
+                <item name="180405-2-updatePortalusers.sql">
+                    <![CDATA[alter table portalusers add column CREATE_TS datetime(3) ;
+alter table portalusers add column CREATED_BY varchar(50) ;
+alter table portalusers add column DELETE_TS datetime(3) ;
+alter table portalusers add column DELETED_BY varchar(50) ;
+alter table portalusers add column UPDATE_TS datetime(3) ;
+alter table portalusers add column UPDATED_BY varchar(50) ;
+alter table portalusers add column VERSION integer ;]]>
+                </item>
+                <item name="180405-2-updatePortaluserroles01.sql">
+                    <![CDATA[create index IDX_PORTALUSERROLES_USERID on portaluserroles (USERID);]]>
+                </item>
+                <item name="180405-2-updatePortaluserroles.sql">
+                    <![CDATA[alter table portaluserroles add column CREATE_TS datetime(3) ;
+alter table portaluserroles add column CREATED_BY varchar(50) ;
+alter table portaluserroles add column DELETE_TS datetime(3) ;
+alter table portaluserroles add column DELETED_BY varchar(50) ;
+alter table portaluserroles add column UPDATE_TS datetime(3) ;
+alter table portaluserroles add column UPDATED_BY varchar(50) ;
+alter table portaluserroles add column VERSION integer ;]]>
+                </item>
+                <item name="180405-2-updatePayments01.sql">
+                    <![CDATA[create index IDX_PAYMENTS_INVOICEID on payments (INVOICEID);]]>
+                </item>
+                <item name="180405-2-updatePayments.sql">
+                    <![CDATA[alter table payments add column CREATE_TS datetime(3) ;
+alter table payments add column CREATED_BY varchar(50) ;
+alter table payments add column DELETE_TS datetime(3) ;
+alter table payments add column DELETED_BY varchar(50) ;
+alter table payments add column UPDATE_TS datetime(3) ;
+alter table payments add column UPDATED_BY varchar(50) ;
+alter table payments add column VERSION integer ;]]>
+                </item>
+                <item name="180405-2-updatePaymentmodes01.sql">
+                    <![CDATA[create index IDX_PAYMENTMODES_DEBITACCOUNT on paymentmodes (DEBITACCOUNT);]]>
+                </item>
+                <item name="180405-2-updatePaymentmodes.sql">
+                    <![CDATA[alter table paymentmodes add column CREATE_TS datetime(3) ;
+alter table paymentmodes add column CREATED_BY varchar(50) ;
+alter table paymentmodes add column DELETE_TS datetime(3) ;
+alter table paymentmodes add column DELETED_BY varchar(50) ;
+alter table paymentmodes add column UPDATE_TS datetime(3) ;
+alter table paymentmodes add column UPDATED_BY varchar(50) ;
+alter table paymentmodes add column VERSION integer ;]]>
+                </item>
+                <item name="180405-2-updateOfflinestreams03.sql">
+                    <![CDATA[create index IDX_OFFLINESTREAMS_STREAM on offlinestreams (STREAM);]]>
+                </item>
+                <item name="180405-2-updateOfflinestreams02.sql">
+                    <![CDATA[create index IDX_OFFLINESTREAMS_SECTION on offlinestreams (SECTION);]]>
+                </item>
+                <item name="180405-2-updateOfflinestreams01.sql">
+                    <![CDATA[create index IDX_OFFLINESTREAMS_COLLECTOR on offlinestreams (COLLECTOR);]]>
+                </item>
+                <item name="180405-2-updateOfflinestreams.sql">
+                    <![CDATA[alter table offlinestreams add column CREATE_TS datetime(3) ;
+alter table offlinestreams add column CREATED_BY varchar(50) ;
+alter table offlinestreams add column DELETE_TS datetime(3) ;
+alter table offlinestreams add column DELETED_BY varchar(50) ;
+alter table offlinestreams add column UPDATE_TS datetime(3) ;
+alter table offlinestreams add column UPDATED_BY varchar(50) ;
+alter table offlinestreams add column VERSION integer ;]]>
+                </item>
+                <item name="180405-2-updateInvoices01.sql">
+                    <![CDATA[create index IDX_INVOICES_PARTNER on invoices (PARTNER);]]>
+                </item>
+                <item name="180405-2-updateInvoicelines02.sql">
+                    <![CDATA[create index IDX_INVOICELINES_STREAMID on invoicelines (STREAMID);]]>
+                </item>
+                <item name="180405-2-updateInvoicelines01.sql">
+                    <![CDATA[create index IDX_INVOICELINES_INVOICEID on invoicelines (INVOICEID);]]>
+                </item>
+                <item name="180405-2-updateInvoicelines.sql">
+                    <![CDATA[alter table invoicelines add column CREATE_TS datetime(3) ;
+alter table invoicelines add column CREATED_BY varchar(50) ;
+alter table invoicelines add column DELETE_TS datetime(3) ;
+alter table invoicelines add column DELETED_BY varchar(50) ;
+alter table invoicelines add column UPDATE_TS datetime(3) ;
+alter table invoicelines add column UPDATED_BY varchar(50) ;
+alter table invoicelines add column VERSION integer ;]]>
+                </item>
+                <item name="180405-2-updateDepartments02.sql">
+                    <![CDATA[create index IDX_DEPARTMENTS_MINISTRYID on departments (MINISTRYID);]]>
+                </item>
+                <item name="180405-2-updateBusinesspermits18.sql">
+                    <![CDATA[create index IDX_BUSINESSPERMITS_INVOICENUMBER on businesspermits (INVOICENUMBER);]]>
+                </item>
+                <item name="180405-2-updateBusinesspermits17.sql">
+                    <![CDATA[create index IDX_BUSINESSPERMITS_RCPTNUMBER on businesspermits (RCPTNUMBER);]]>
+                </item>
+                <item name="180405-2-updateBusinesspermits16.sql">
+                    <![CDATA[create index IDX_BUSINESSPERMITS_PROPERTYREGISTERID on businesspermits (PROPERTYREGISTERID);]]>
+                </item>
+                <item name="180405-2-updateBusinesspermits15.sql">
+                    <![CDATA[create index IDX_BUSINESSPERMITS_ACTIVITYCODE on businesspermits (ACTIVITYCODE);]]>
+                </item>
+                <item name="180405-2-updateBusinesspermits14.sql">
+                    <![CDATA[create index IDX_BUSINESSPERMITS_BUSINESSID on businesspermits (BUSINESSID);]]>
+                </item>
+                <item name="180405-2-updateBusinesspermits13.sql">
+                    <![CDATA[create index IDX_BUSINESSPERMITS_PERMITPAYER on businesspermits (PERMITPAYER);]]>
+                </item>
             </mysql>
         </excludes>
     </dbScripts>

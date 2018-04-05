@@ -1,0 +1,1 @@
+create index IDX_BUSINESSPERMITS_PERMITPAYER on businesspermits (PERMITPAYER);

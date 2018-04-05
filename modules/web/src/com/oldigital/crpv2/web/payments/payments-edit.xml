@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editorCaption"
+        class="com.oldigital.crpv2.web.payments.PaymentsEdit"
+        datasource="paymentsDs"
+        focusComponent="fieldGroup"
+        messagesPack="com.oldigital.crpv2.web.payments">
+    <dsContext>
+        <datasource id="paymentsDs"
+                    class="com.oldigital.crpv2.entity.Payments"
+                    view="Payments-screen-view"/>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="windowActions"
+            spacing="true">
+        <fieldGroup id="fieldGroup"
+                    datasource="paymentsDs">
+            <column width="250px">
+                <field property="invoiceID"/>
+                <field property="paymentType"/>
+                <field property="originID"/>
+                <field property="amount"/>
+                <field property="description"/>
+                <field property="createdDate"/>
+            </column>
+        </fieldGroup>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.oldigital.crpv2.web.revenuestreams.RevenuestreamsBrowse"
+        focusComponent="revenuestreamsesTable"
+        lookupComponent="revenuestreamsesTable"
+        messagesPack="com.oldigital.crpv2.web.revenuestreams">
+    <dsContext>
+        <groupDatasource id="revenuestreamsesDs"
+                         class="com.oldigital.crpv2.entity.Revenuestreams"
+                         view="Revenuestreams-screen-view">
+            <query>
+                <![CDATA[select e from crpv2$Revenuestreams e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="revenuestreamsesTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="revenuestreamsesTable"
+                datasource="revenuestreamsesDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="revenuestreamsesTable"
+                    width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="category"/>
+                <column id="revenueCode"/>
+                <column id="revenueName"/>
+                <column id="price"/>
+                <column id="status"/>
+                <column id="defaultDebitAC"/>
+                <column id="defaultCreditAC"/>
+                <column id="revenuceCode"/>
+                <column id="department"/>
+            </columns>
+            <rows datasource="revenuestreamsesDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="revenuestreamsesTable.create"/>
+                <button id="editBtn"
+                        action="revenuestreamsesTable.edit"/>
+                <button id="removeBtn"
+                        action="revenuestreamsesTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

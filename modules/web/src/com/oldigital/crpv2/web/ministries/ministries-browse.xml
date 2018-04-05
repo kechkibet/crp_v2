@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.oldigital.crpv2.web.ministries.MinistriesBrowse"
+        focusComponent="ministriesesTable"
+        lookupComponent="ministriesesTable"
+        messagesPack="com.oldigital.crpv2.web.ministries">
+    <dsContext>
+        <groupDatasource id="ministriesesDs"
+                         class="com.oldigital.crpv2.entity.Ministries"
+                         view="_local">
+            <query>
+                <![CDATA[select e from crpv2$Ministries e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="ministriesesTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="ministriesesTable"
+                datasource="ministriesesDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="ministriesesTable"
+                    width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="ministryName"/>
+            </columns>
+            <rows datasource="ministriesesDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="ministriesesTable.create"/>
+                <button id="editBtn"
+                        action="ministriesesTable.edit"/>
+                <button id="removeBtn"
+                        action="ministriesesTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

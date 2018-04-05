@@ -1,0 +1,1 @@
+create index IDX_REVENUESTREAMS_DEFAULTCREDITAC on revenuestreams (DEFAULTCREDITAC);

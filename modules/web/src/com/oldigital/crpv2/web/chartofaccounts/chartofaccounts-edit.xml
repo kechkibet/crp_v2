@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editorCaption"
+        class="com.oldigital.crpv2.web.chartofaccounts.ChartofaccountsEdit"
+        datasource="chartofaccountsDs"
+        focusComponent="fieldGroup"
+        messagesPack="com.oldigital.crpv2.web.chartofaccounts">
+    <dsContext>
+        <datasource id="chartofaccountsDs"
+                    class="com.oldigital.crpv2.entity.Chartofaccounts"
+                    view="Chartofaccounts-screen-view"/>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="windowActions"
+            spacing="true">
+        <fieldGroup id="fieldGroup"
+                    datasource="chartofaccountsDs">
+            <column width="250px">
+                <field property="code"/>
+                <field property="name"/>
+                <field property="accountType"/>
+                <field property="category"/>
+            </column>
+        </fieldGroup>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>

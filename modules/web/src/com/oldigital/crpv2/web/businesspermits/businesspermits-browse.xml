@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.oldigital.crpv2.web.businesspermits.BusinesspermitsBrowse"
+        focusComponent="businesspermitsesTable"
+        lookupComponent="businesspermitsesTable"
+        messagesPack="com.oldigital.crpv2.web.businesspermits">
+    <dsContext>
+        <groupDatasource id="businesspermitsesDs"
+                         class="com.oldigital.crpv2.entity.Businesspermits"
+                         view="Businesspermits-screen-view">
+            <query>
+                <![CDATA[select e from crpv2$Businesspermits e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="businesspermitsesTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="businesspermitsesTable"
+                datasource="businesspermitsesDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="businesspermitsesTable"
+                    width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="status"/>
+                <column id="amountPaid"/>
+                <column id="expiryDate"/>
+                <column id="creationDate"/>
+                <column id="permitPayer"/>
+                <column id="description"/>
+                <column id="businessID"/>
+                <column id="activityCode"/>
+                <column id="propertyRegisterID"/>
+                <column id="numberOfEmployees"/>
+                <column id="certificateNo"/>
+                <column id="rcptNumber"/>
+                <column id="invoiceNumber"/>
+            </columns>
+            <rows datasource="businesspermitsesDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="businesspermitsesTable.create"/>
+                <button id="editBtn"
+                        action="businesspermitsesTable.edit"/>
+                <button id="removeBtn"
+                        action="businesspermitsesTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

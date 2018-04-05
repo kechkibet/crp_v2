@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editorCaption"
+        class="com.oldigital.crpv2.web.propertycharges.PropertychargesEdit"
+        datasource="propertychargesDs"
+        focusComponent="fieldGroup"
+        messagesPack="com.oldigital.crpv2.web.propertycharges">
+    <dsContext>
+        <datasource id="propertychargesDs"
+                    class="com.oldigital.crpv2.entity.Propertycharges"
+                    view="Propertycharges-screen-view"/>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="windowActions"
+            spacing="true">
+        <fieldGroup id="fieldGroup"
+                    datasource="propertychargesDs">
+            <column width="250px">
+                <field property="propertyID"/>
+                <field property="amountCharged"/>
+                <field property="chargeType"/>
+                <field property="dateCharged"/>
+                <field property="cronJobID"/>
+                <field property="invoiceID"/>
+            </column>
+        </fieldGroup>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>
