@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
-    <persistence-unit name="crpv2" transaction-type="RESOURCE_LOCAL">
-
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+             version="2.0">
+    <persistence-unit name="crpv2"
+                      transaction-type="RESOURCE_LOCAL">
+        <class>com.oldigital.crpv2.entity.Persons</class>
+        <class>com.oldigital.crpv2.entity.Propertyregister</class>
+        <class>com.oldigital.crpv2.entity.Subcounties</class>
+        <class>com.oldigital.crpv2.entity.Valuationrolls</class>
     </persistence-unit>
 </persistence>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editorCaption"
+        class="com.oldigital.crpv2.web.persons.PersonsEdit"
+        datasource="personsDs"
+        focusComponent="fieldGroup"
+        messagesPack="com.oldigital.crpv2.web.persons">
+    <dsContext>
+        <datasource id="personsDs"
+                    class="com.oldigital.crpv2.entity.Persons"
+                    view="persons-view"/>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="windowActions"
+            spacing="true">
+        <grid spacing="true">
+            <columns count="2"/>
+            <rows>
+                <row>
+                    <fieldGroup id="fieldGroup"
+                                datasource="personsDs">
+                        <column width="250px">
+                            <field caption="First Name"
+                                   property="personFirstName"/>
+                            <field caption="Last Name"
+                                   property="personLastName"/>
+                            <field caption="ID Number"
+                                   property="idNumber"/>
+                        </column>
+                        <column>
+                            <field caption="Phone Number"
+                                   property="phoneNumber"/>
+                            <field caption="Email"
+                                   property="emailAddress"/>
+                            <field caption="Address"
+                                   property="address"/>
+                        </column>
+                        <column>
+                            <field caption="Photo"
+                                   property="photo"/>
+                        </column>
+                    </fieldGroup>
+                    <image id="image"/>
+                </row>
+                <row/>
+            </rows>
+        </grid>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>

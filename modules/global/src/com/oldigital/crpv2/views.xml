@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <views xmlns="http://schemas.haulmont.com/cuba/view.xsd">
-
+    <view class="com.oldigital.crpv2.entity.Persons"
+          extends="_local"
+          name="persons-view">
+        <property name="photo"
+                  view="_minimal"/>
+    </view>
 </views>
