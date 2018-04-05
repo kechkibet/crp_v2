@@ -519,3 +519,37 @@ create table revenuecollectors (
     primary key (ID)
 )^
 -- end REVENUECOLLECTORS
+-- begin SECTIONCOLLECTORS
+create table sectioncollectors (
+    ID int auto_increment,
+    CREATE_TS datetime(3),
+    CREATED_BY varchar(50),
+    DELETE_TS datetime(3),
+    DELETED_BY varchar(50),
+    UPDATE_TS datetime(3),
+    UPDATED_BY varchar(50),
+    VERSION integer,
+    --
+    collector integer,
+    section integer,
+    --
+    primary key (ID)
+)^
+-- end SECTIONCOLLECTORS
+-- begin SECTIONSTREAMS
+create table sectionstreams (
+    ID int auto_increment,
+    CREATE_TS datetime(3),
+    CREATED_BY varchar(50),
+    DELETE_TS datetime(3),
+    DELETED_BY varchar(50),
+    UPDATE_TS datetime(3),
+    UPDATED_BY varchar(50),
+    VERSION integer,
+    --
+    section integer,
+    stream integer,
+    --
+    primary key (ID)
+)^
+-- end SECTIONSTREAMS

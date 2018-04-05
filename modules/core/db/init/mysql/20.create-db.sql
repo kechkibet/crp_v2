@@ -112,3 +112,15 @@ create index IDX_REVENUECOLLECTIONTRANSACTIONS_`RECONFILEID` on revenuecollectio
 alter table revenuecollectors add constraint FK_REVENUECOLLECTORS_`RECONPERSON` foreign key (`RECONPERSON`) references persons(ID)^
 create index IDX_REVENUECOLLECTORS_`RECONPERSON` on revenuecollectors (`RECONPERSON`)^
 -- end REVENUECOLLECTORS
+-- begin SECTIONCOLLECTORS
+alter table sectioncollectors add constraint FK_SECTIONCOLLECTORS_COLLECTOR foreign key (COLLECTOR) references revenuecollectors(ID)^
+alter table sectioncollectors add constraint FK_SECTIONCOLLECTORS_SECTION foreign key (SECTION) references revenuecategory(ID)^
+create index IDX_SECTIONCOLLECTORS_COLLECTOR on sectioncollectors (COLLECTOR)^
+create index IDX_SECTIONCOLLECTORS_SECTION on sectioncollectors (SECTION)^
+-- end SECTIONCOLLECTORS
+-- begin SECTIONSTREAMS
+alter table sectionstreams add constraint FK_SECTIONSTREAMS_SECTION foreign key (SECTION) references revenuecategory(ID)^
+alter table sectionstreams add constraint FK_SECTIONSTREAMS_STREAM foreign key (STREAM) references revenuestreams(ID)^
+create index IDX_SECTIONSTREAMS_SECTION on sectionstreams (SECTION)^
+create index IDX_SECTIONSTREAMS_STREAM on sectionstreams (STREAM)^
+-- end SECTIONSTREAMS

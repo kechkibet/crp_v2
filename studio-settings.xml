@@ -229,6 +229,18 @@ alter table invoicelines add column VERSION integer ;]]>
                 <item name="180405-2-updateBusinesspermits13.sql">
                     <![CDATA[create index IDX_BUSINESSPERMITS_PERMITPAYER on businesspermits (PERMITPAYER);]]>
                 </item>
+                <item name="180405-2-updateSectionstreams02.sql">
+                    <![CDATA[create index IDX_SECTIONSTREAMS_STREAM on sectionstreams (STREAM);]]>
+                </item>
+                <item name="180405-2-updateSectionstreams01.sql">
+                    <![CDATA[create index IDX_SECTIONSTREAMS_SECTION on sectionstreams (SECTION);]]>
+                </item>
+                <item name="180405-2-updateSectioncollectors02.sql">
+                    <![CDATA[create index IDX_SECTIONCOLLECTORS_SECTION on sectioncollectors (SECTION);]]>
+                </item>
+                <item name="180405-2-updateSectioncollectors01.sql">
+                    <![CDATA[create index IDX_SECTIONCOLLECTORS_COLLECTOR on sectioncollectors (COLLECTOR);]]>
+                </item>
             </mysql>
         </excludes>
     </dbScripts>
