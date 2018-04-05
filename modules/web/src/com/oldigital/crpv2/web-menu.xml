@@ -3,5 +3,8 @@
     <menu id="application-crpv2"
           insertBefore="administration">
         <item screen="crpv2$Persons.browse"/>
+        <item screen="crpv2$Subcounties.browse"/>
+        <item screen="crpv2$Valuationrolls.browse"/>
+        <item screen="crpv2$Propertyregister.browse"/>
     </menu>
 </menu-config>

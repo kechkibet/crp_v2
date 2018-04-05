@@ -14,6 +14,11 @@ import com.haulmont.cuba.core.entity.BaseIntIdentityIdEntity;
 import com.haulmont.cuba.core.entity.Versioned;
 import com.haulmont.cuba.core.entity.Updatable;
 import com.haulmont.cuba.core.entity.Creatable;
+import com.oldigital.crpv2.entity.enums.RollType;
+import com.oldigital.crpv2.entity.enums.LandUse;
+import com.oldigital.crpv2.entity.enums.RatingMethod;
+import com.oldigital.crpv2.entity.enums.RentBasedOn;
+import com.oldigital.crpv2.entity.enums.ValuationMethod;
 
 @DesignSupport("{'imported':true}")
 @NamePattern("%s|name")
@@ -29,25 +34,25 @@ public class Valuationrolls extends BaseIntIdentityIdEntity implements Versioned
     protected String name;
 
     @Column(name = "`rollType`", nullable = false)
-    protected String rollType;
+    protected Integer rollType;
 
     @Column(name = "`landUse`", nullable = false)
-    protected String landUse;
+    protected Integer landUse;
 
     @Column(name = "`siteValue`")
     protected String siteValue;
 
     @Column(name = "`valuationMethod`")
-    protected String valuationMethod;
+    protected Integer valuationMethod;
 
     @Column(name = "`ratingMethod`")
-    protected String ratingMethod;
+    protected Integer ratingMethod;
 
     @Column(name = "`annualRate`")
     protected String annualRate;
 
     @Column(name = "`rentBasedOn`")
-    protected String rentBasedOn;
+    protected Integer rentBasedOn;
 
     @Column(name = "exempt")
     protected String exempt;
@@ -78,6 +83,51 @@ public class Valuationrolls extends BaseIntIdentityIdEntity implements Versioned
     @Column(name = "VERSION")
     protected Integer version;
 
+    public ValuationMethod getValuationMethod() {
+        return valuationMethod == null ? null : ValuationMethod.fromId(valuationMethod);
+    }
+
+    public void setValuationMethod(ValuationMethod valuationMethod) {
+        this.valuationMethod = valuationMethod == null ? null : valuationMethod.getId();
+    }
+
+
+    public RatingMethod getRatingMethod() {
+        return ratingMethod == null ? null : RatingMethod.fromId(ratingMethod);
+    }
+
+    public void setRatingMethod(RatingMethod ratingMethod) {
+        this.ratingMethod = ratingMethod == null ? null : ratingMethod.getId();
+    }
+
+
+    public RentBasedOn getRentBasedOn() {
+        return rentBasedOn == null ? null : RentBasedOn.fromId(rentBasedOn);
+    }
+
+    public void setRentBasedOn(RentBasedOn rentBasedOn) {
+        this.rentBasedOn = rentBasedOn == null ? null : rentBasedOn.getId();
+    }
+
+
+    public LandUse getLandUse() {
+        return landUse == null ? null : LandUse.fromId(landUse);
+    }
+
+    public void setLandUse(LandUse landUse) {
+        this.landUse = landUse == null ? null : landUse.getId();
+    }
+
+
+    public RollType getRollType() {
+        return rollType == null ? null : RollType.fromId(rollType);
+    }
+
+    public void setRollType(RollType rollType) {
+        this.rollType = rollType == null ? null : rollType.getId();
+    }
+
+
     public void setValuationCode(Integer valuationCode) {
         this.valuationCode = valuationCode;
     }
@@ -94,22 +144,6 @@ public class Valuationrolls extends BaseIntIdentityIdEntity implements Versioned
         return name;
     }
 
-    public void setRollType(String rollType) {
-        this.rollType = rollType;
-    }
-
-    public String getRollType() {
-        return rollType;
-    }
-
-    public void setLandUse(String landUse) {
-        this.landUse = landUse;
-    }
-
-    public String getLandUse() {
-        return landUse;
-    }
-
     public void setSiteValue(String siteValue) {
         this.siteValue = siteValue;
     }
@@ -118,36 +152,12 @@ public class Valuationrolls extends BaseIntIdentityIdEntity implements Versioned
         return siteValue;
     }
 
-    public void setValuationMethod(String valuationMethod) {
-        this.valuationMethod = valuationMethod;
-    }
-
-    public String getValuationMethod() {
-        return valuationMethod;
-    }
-
-    public void setRatingMethod(String ratingMethod) {
-        this.ratingMethod = ratingMethod;
-    }
-
-    public String getRatingMethod() {
-        return ratingMethod;
-    }
-
     public void setAnnualRate(String annualRate) {
         this.annualRate = annualRate;
     }
 
     public String getAnnualRate() {
         return annualRate;
-    }
-
-    public void setRentBasedOn(String rentBasedOn) {
-        this.rentBasedOn = rentBasedOn;
-    }
-
-    public String getRentBasedOn() {
-        return rentBasedOn;
     }
 
     public void setExempt(String exempt) {

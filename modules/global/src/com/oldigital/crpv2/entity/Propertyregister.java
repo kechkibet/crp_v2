@@ -16,6 +16,8 @@ import com.haulmont.cuba.core.entity.Versioned;
 import com.haulmont.cuba.core.entity.SoftDelete;
 import com.haulmont.cuba.core.entity.Updatable;
 import com.haulmont.cuba.core.entity.Creatable;
+import com.haulmont.cuba.core.entity.FileDescriptor;
+import com.oldigital.crpv2.entity.enums.LandInterest;
 
 @DesignSupport("{'imported':true}")
 @Table(name = "propertyregister")
@@ -46,14 +48,15 @@ public class Propertyregister extends BaseIntIdentityIdEntity implements Version
     @JoinColumn(name = "`subCounty`")
     protected Subcounties subCounty;
 
-    @Column(name = "`uploadTitleDeed`")
-    protected byte[] uploadTitleDeed;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "`uploadTitleDeed`")
+    protected FileDescriptor uploadTitleDeed;
 
     @Column(name = "`sizeInHa`")
     protected Integer sizeInHa;
 
     @Column(name = "interest")
-    protected String interest;
+    protected Integer interest;
 
     @Temporal(TemporalType.DATE)
     @Column(name = "`leaseStartDate`")
@@ -63,10 +66,11 @@ public class Propertyregister extends BaseIntIdentityIdEntity implements Version
     protected Integer leaseExpiry;
 
     @Column(name = "status")
-    protected String status;
+    protected Boolean status;
 
-    @Column(name = "`uploadStampDuty`")
-    protected byte[] uploadStampDuty;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "`uploadStampDuty`")
+    protected FileDescriptor uploadStampDuty;
 
     @Column(name = "`sellingValue`")
     protected Integer sellingValue;
@@ -96,6 +100,42 @@ public class Propertyregister extends BaseIntIdentityIdEntity implements Version
     @Version
     @Column(name = "VERSION")
     protected Integer version;
+
+    public LandInterest getInterest() {
+        return interest == null ? null : LandInterest.fromId(interest);
+    }
+
+    public void setInterest(LandInterest interest) {
+        this.interest = interest == null ? null : interest.getId();
+    }
+
+
+    public FileDescriptor getUploadTitleDeed() {
+        return uploadTitleDeed;
+    }
+
+    public void setUploadTitleDeed(FileDescriptor uploadTitleDeed) {
+        this.uploadTitleDeed = uploadTitleDeed;
+    }
+
+
+    public Boolean getStatus() {
+        return status;
+    }
+
+    public void setStatus(Boolean status) {
+        this.status = status;
+    }
+
+
+    public FileDescriptor getUploadStampDuty() {
+        return uploadStampDuty;
+    }
+
+    public void setUploadStampDuty(FileDescriptor uploadStampDuty) {
+        this.uploadStampDuty = uploadStampDuty;
+    }
+
 
     @Override
     public Boolean isDeleted() {
@@ -159,28 +199,12 @@ public class Propertyregister extends BaseIntIdentityIdEntity implements Version
         return subCounty;
     }
 
-    public void setUploadTitleDeed(byte[] uploadTitleDeed) {
-        this.uploadTitleDeed = uploadTitleDeed;
-    }
-
-    public byte[] getUploadTitleDeed() {
-        return uploadTitleDeed;
-    }
-
     public void setSizeInHa(Integer sizeInHa) {
         this.sizeInHa = sizeInHa;
     }
 
     public Integer getSizeInHa() {
         return sizeInHa;
-    }
-
-    public void setInterest(String interest) {
-        this.interest = interest;
-    }
-
-    public String getInterest() {
-        return interest;
     }
 
     public void setLeaseStartDate(Date leaseStartDate) {
@@ -197,22 +221,6 @@ public class Propertyregister extends BaseIntIdentityIdEntity implements Version
 
     public Integer getLeaseExpiry() {
         return leaseExpiry;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setUploadStampDuty(byte[] uploadStampDuty) {
-        this.uploadStampDuty = uploadStampDuty;
-    }
-
-    public byte[] getUploadStampDuty() {
-        return uploadStampDuty;
     }
 
     public void setSellingValue(Integer sellingValue) {

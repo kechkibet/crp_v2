@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.oldigital.crpv2.web.subcounties.SubcountiesBrowse"
+        focusComponent="subcountiesesTable"
+        lookupComponent="subcountiesesTable"
+        messagesPack="com.oldigital.crpv2.web.subcounties">
+    <dsContext>
+        <groupDatasource id="subcountiesesDs"
+                         class="com.oldigital.crpv2.entity.Subcounties"
+                         view="_local">
+            <query>
+                <![CDATA[select e from crpv2$Subcounties e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="subcountiesesTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="subcountiesesTable"
+                datasource="subcountiesesDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="subcountiesesTable"
+                    width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="name"
+                        caption="Name"/>
+                <column id="iebcCode"
+                        caption="IEBC Code"/>
+            </columns>
+            <rows datasource="subcountiesesDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="subcountiesesTable.create"/>
+                <button id="editBtn"
+                        action="subcountiesesTable.edit"/>
+                <button id="removeBtn"
+                        action="subcountiesesTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

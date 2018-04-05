@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editorCaption"
+        class="com.oldigital.crpv2.web.propertyregister.PropertyregisterEdit"
+        datasource="propertyregisterDs"
+        focusComponent="fieldGroup"
+        messagesPack="com.oldigital.crpv2.web.propertyregister">
+    <dsContext>
+        <datasource id="propertyregisterDs"
+                    class="com.oldigital.crpv2.entity.Propertyregister"
+                    view="propertyregister-view"/>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="scrollBox"
+            spacing="true">
+        <scrollBox id="scrollBox"
+                   spacing="true">
+            <fieldGroup id="fieldGroup"
+                        datasource="propertyregisterDs">
+                <column width="250px">
+                    <field caption="LR Number"
+                           property="lrNumber"/>
+                    <field caption="Valuation Roll"
+                           property="valuationRoll"/>
+                    <field caption="Rate Payer"
+                           property="ratePayer"/>
+                </column>
+                <column>
+                    <field caption="Lease Expiry"
+                           property="leaseExpiry"/>
+                    <field caption="Lease Start Date"
+                           property="leaseStartDate"/>
+                    <field caption="Interest"
+                           property="interest"/>
+                </column>
+                <column>
+                    <field caption="Physical Location"
+                           property="physicalLocation"/>
+                    <field caption="Sub County"
+                           property="subCounty"/>
+                    <field caption="Size in Ha"
+                           property="sizeInHa"/>
+                </column>
+                <column>
+                    <field caption="Stamp Duty Copy"
+                           property="uploadStampDuty"/>
+                    <field caption="Title Deed Copy"
+                           property="uploadTitleDeed"/>
+                    <field caption="Selling Value"
+                           property="sellingValue"/>
+                </column>
+                <column>
+                    <field caption="Status"
+                           property="status"/>
+                </column>
+            </fieldGroup>
+        </scrollBox>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>

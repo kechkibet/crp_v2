@@ -32,7 +32,7 @@
             </actions>
             <columns>
                 <column id="personFirstName"
-                        caption="First Name"/>
+                        caption="First Names"/>
                 <column id="personLastName"
                         caption="Last Name"/>
                 <column id="idNumber"

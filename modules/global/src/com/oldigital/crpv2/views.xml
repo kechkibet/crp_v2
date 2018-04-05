@@ -6,4 +6,24 @@
         <property name="photo"
                   view="_minimal"/>
     </view>
+    <view class="com.oldigital.crpv2.entity.Propertyregister"
+          extends="_local"
+          name="propertyregister-view">
+        <property name="valuationRoll"
+                  view="_minimal"/>
+        <property name="subCounty"
+                  view="_minimal"/>
+        <property name="uploadTitleDeed"
+                  view="_minimal"/>
+        <property name="uploadStampDuty"
+                  view="_minimal"/>
+        <property name="ratePayer"
+                  view="_minimal"/>
+    </view>
+    <view class="com.oldigital.crpv2.entity.Valuationrolls"
+          extends="_local"
+          name="valuationrolls-view">
+        <property name="subCounty"
+                  view="_minimal"/>
+    </view>
 </views>

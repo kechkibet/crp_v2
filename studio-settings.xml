@@ -4,4 +4,46 @@
         <functionality id="oneToOneIndex"
                        state="ENABLE"/>
     </functionalitySettings>
+    <dbScripts>
+        <excludes>
+            <mysql>
+                <item name="180405-2-updateValuationrolls01.sql">
+                    <![CDATA[create index IDX_VALUATIONROLLS_SUBCOUNTY on valuationrolls (SUBCOUNTY);]]>
+                </item>
+                <item name="180405-2-updatePropertyregister06.sql">
+                    <![CDATA[alter table propertyregister add constraint FK_PROPERTYREGISTER_UPLOADTITLEDEED foreign key (UPLOADTITLEDEED) references SYS_FILE(ID);
+create index IDX_PROPERTYREGISTER_UPLOADTITLEDEED on propertyregister (UPLOADTITLEDEED);]]>
+                </item>
+                <item name="180405-2-updatePropertyregister09.sql">
+                    <![CDATA[alter table propertyregister add constraint FK_PROPERTYREGISTER_UPLOADSTAMPDUTY foreign key (UPLOADSTAMPDUTY) references SYS_FILE(ID);
+create index IDX_PROPERTYREGISTER_UPLOADSTAMPDUTY on propertyregister (UPLOADSTAMPDUTY);]]>
+                </item>
+                <item name="180405-2-updateValuationrolls.sql">
+                    <![CDATA[alter table valuationrolls change column rentBasedOn rentBasedOn__UNUSED varchar(255);
+alter table valuationrolls change column ratingMethod ratingMethod__UNUSED varchar(255);
+alter table valuationrolls change column valuationMethod valuationMethod__UNUSED varchar(255);
+alter table valuationrolls change column landUse landUse__UNUSED varchar(255);
+alter table valuationrolls modify column landUse__UNUSED varchar(255) null ;
+alter table valuationrolls change column rollType rollType__UNUSED varchar(255);
+alter table valuationrolls modify column rollType__UNUSED varchar(255) null ;
+alter table valuationrolls add column ROLLTYPE integer ^
+update valuationrolls set ROLLTYPE = 1 where ROLLTYPE is null ;
+alter table valuationrolls modify column ROLLTYPE integer not null ;
+alter table valuationrolls add column LANDUSE integer ^
+update valuationrolls set LANDUSE = 1 where LANDUSE is null ;
+alter table valuationrolls modify column LANDUSE integer not null ;
+alter table valuationrolls add column VALUATIONMETHOD integer ;
+alter table valuationrolls add column RATINGMETHOD integer ;
+alter table valuationrolls add column RENTBASEDON integer ;]]>
+                </item>
+                <item name="180405-2-updateValuationrolls02_DropScript.sql">
+                    <![CDATA[alter table valuationrolls drop column `rollType__UNUSED` cascade ;
+alter table valuationrolls drop column `landUse__UNUSED` cascade ;
+alter table valuationrolls drop column `valuationMethod__UNUSED` cascade ;
+alter table valuationrolls drop column `ratingMethod__UNUSED` cascade ;
+alter table valuationrolls drop column `rentBasedOn__UNUSED` cascade ;]]>
+                </item>
+            </mysql>
+        </excludes>
+    </dbScripts>
 </studio>

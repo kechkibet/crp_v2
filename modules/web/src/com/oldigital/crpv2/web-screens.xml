@@ -5,4 +5,16 @@
             template="com/oldigital/crpv2/web/persons/persons-browse.xml"/>
     <screen id="crpv2$Persons.edit"
             template="com/oldigital/crpv2/web/persons/persons-edit.xml"/>
+    <screen id="crpv2$Subcounties.browse"
+            template="com/oldigital/crpv2/web/subcounties/subcounties-browse.xml"/>
+    <screen id="crpv2$Subcounties.edit"
+            template="com/oldigital/crpv2/web/subcounties/subcounties-edit.xml"/>
+    <screen id="crpv2$Valuationrolls.browse"
+            template="com/oldigital/crpv2/web/valuationrolls/valuationrolls-browse.xml"/>
+    <screen id="crpv2$Valuationrolls.edit"
+            template="com/oldigital/crpv2/web/valuationrolls/valuationrolls-edit.xml"/>
+    <screen id="crpv2$Propertyregister.browse"
+            template="com/oldigital/crpv2/web/propertyregister/propertyregister-browse.xml"/>
+    <screen id="crpv2$Propertyregister.edit"
+            template="com/oldigital/crpv2/web/propertyregister/propertyregister-edit.xml"/>
 </screen-config>

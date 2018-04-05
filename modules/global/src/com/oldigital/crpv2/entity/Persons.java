@@ -16,7 +16,9 @@ import com.haulmont.cuba.core.entity.FileDescriptor;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import com.haulmont.chile.core.annotations.NamePattern;
 
+@NamePattern("%s %s|personFirstName,personLastName")
 @DesignSupport("{'imported':true}")
 @Table(name = "persons")
 @Entity(name = "crpv2$Persons")

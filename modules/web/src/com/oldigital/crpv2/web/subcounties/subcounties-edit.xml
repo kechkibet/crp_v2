@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editorCaption"
+        class="com.oldigital.crpv2.web.subcounties.SubcountiesEdit"
+        datasource="subcountiesDs"
+        focusComponent="fieldGroup"
+        messagesPack="com.oldigital.crpv2.web.subcounties">
+    <dsContext>
+        <datasource id="subcountiesDs"
+                    class="com.oldigital.crpv2.entity.Subcounties"
+                    view="_local"/>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="windowActions"
+            spacing="true">
+        <fieldGroup id="fieldGroup"
+                    datasource="subcountiesDs">
+            <column width="250px">
+                <field caption="Name"
+                       property="name"/>
+                <field caption="IEBC Code"
+                       property="iebcCode"/>
+            </column>
+        </fieldGroup>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>

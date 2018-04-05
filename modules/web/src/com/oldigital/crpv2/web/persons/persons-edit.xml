@@ -41,7 +41,8 @@
                                    property="photo"/>
                         </column>
                     </fieldGroup>
-                    <image id="image"/>
+                    <embedded id="personPhoto"
+                              width="115px"/>
                 </row>
                 <row/>
             </rows>
